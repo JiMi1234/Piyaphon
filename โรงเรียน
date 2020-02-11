@@ -1,0 +1,21 @@
+const request = require('request')
+
+request({
+  method: 'POST',
+  uri: 'https://notify-api.line.me/api/notify',
+  header: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  auth: {
+    bearer: 'fpiZmG0DdvYl5lkXeaIQHwWXHZhuCjzVLf6h7p1or4W', //token
+  },
+  form: {
+    message: 'แจ้งเตือนจากโรงเรียน', //7.30 ถึงเวลาเข้าแถวหน้าเสาร์ธง
+  },
+}, (err, httpResponse, body) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(body)
+  }
+})
